@@ -4,11 +4,7 @@ import "fmt"
 
 func main() {
 
-	var counter int
-	counter = 0
-
-	for counter < 10 {
+	for i := 0; i < 10; i++ {
 		fmt.Printf("Hello, World\n")
-		counter++
 	}
 }
