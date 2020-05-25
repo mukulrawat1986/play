@@ -2,14 +2,16 @@ package main
 
 import "fmt"
 
-func printer(msg, msg2 string, repeat int) {
-	for repeat > 0 {
-		fmt.Printf("%s", msg)
-		fmt.Printf("%s\n", msg2)
-		repeat--
-	}
+func printer(msg string) (string, error) {
+	msg += "\n"
+	_, err := fmt.Printf("%s", msg)
+	return msg, err
 }
 
 func main() {
-	printer("Hello,", " World!", 5)
+	appendedMessage, err := printer("Hello, World!")
+	if err == nil {
+		fmt.Printf("%q\n", appendedMessage)  // quote the string
+		fmt.Printf("% x\n", appendedMessage) // Hex string
+	}
 }
