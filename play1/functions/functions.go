@@ -2,16 +2,16 @@ package main
 
 import "os"
 
-func printer(msg string) error {
+func printer(msg string) (err error) {
 
 	f, err := os.Create("helloworld.txt")
 	if err != nil {
-		return err
+		return
 	}
 	defer f.Close()
 
 	f.Write([]byte(msg))
-	return nil
+	return
 }
 
 func main() {
