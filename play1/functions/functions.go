@@ -1,8 +1,11 @@
 package main
 
-import "os"
+import (
+	"fmt"
+	"os"
+)
 
-func printer(msg string) (err error) {
+func filePrinter(msg string) (err error) {
 
 	f, err := os.Create("helloworld.txt")
 	if err != nil {
@@ -14,8 +17,16 @@ func printer(msg string) (err error) {
 	return
 }
 
+func printer(format string, msgs ...string) {
+	defer fmt.Printf("\n")
+	for _, msg := range msgs {
+		fmt.Printf(format, msg)
+	}
+}
+
 func main() {
 
-	printer("Hello, World!")
+	printer("%s", "Hello, ", " World!", " This", " is", " dog") // print string
+	printer("%x", "Hello, ", " World!", " This", " is", " dog") // print in hex
 
 }
