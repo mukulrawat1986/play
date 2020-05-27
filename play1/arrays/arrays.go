@@ -8,8 +8,6 @@ func printer(words []string) {
 	}
 	fmt.Printf("\n")
 
-	// make modification to the array
-	words[2] = "blue"
 }
 
 func main() {
@@ -18,6 +16,7 @@ func main() {
 	words := []string{"the", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog"}
 	fmt.Printf("Length of string: %d\n", len(words))
 
-	printer(words)
-	printer(words)
+	printer(words[:2])
+	printer(words[2:])
+	printer(words[2:4])
 }
