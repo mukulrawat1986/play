@@ -19,5 +19,5 @@ func main() {
 	dayMonths["Nov"] = 30
 	dayMonths["Dec"] = 31
 
-	fmt.Printf("Days in February: %d\n", dayMonths["Feb"])
+	fmt.Printf("Days in February: %d\n", dayMonths["January"])
 }
